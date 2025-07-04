@@ -74,7 +74,7 @@ export function AttendanceTable({
     const recordDate = new Date(record.date).toDateString();
     const targetDate = selectedDate.toDateString();
     const dateMatch = recordDate === targetDate;
-    const classMatch = selectedClassId ? record.classId === selectedClassId : true;
+    const classMatch = selectedClassId && selectedClassId !== "all" ? record.classId === selectedClassId : true;
     return dateMatch && classMatch;
   });
 

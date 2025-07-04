@@ -46,7 +46,7 @@ export function AttendancePage({ userRole = 'admin' }: AttendancePageProps) {
     const recordDate = new Date(record.date).toDateString();
     const targetDate = selectedDate.toDateString();
     const dateMatch = recordDate === targetDate;
-    const classMatch = selectedClass ? record.classId === selectedClass : true;
+    const classMatch = selectedClass && selectedClass !== "all" ? record.classId === selectedClass : true;
     return dateMatch && classMatch;
   });
 
@@ -94,12 +94,12 @@ export function AttendancePage({ userRole = 'admin' }: AttendancePageProps) {
               
               <div className="space-y-2">
                 <label className="text-sm font-medium">Filter by Class</label>
-                <Select value={selectedClass} onValueChange={setSelectedClass}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="All classes" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="">All classes</SelectItem>
+                  <Select value={selectedClass} onValueChange={setSelectedClass}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="All classes" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All classes</SelectItem>
                     {mockClasses.map((cls) => (
                       <SelectItem key={cls.id} value={cls.id}>
                         {cls.name}
