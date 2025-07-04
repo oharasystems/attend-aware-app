@@ -7,8 +7,7 @@ import {
   Settings,
   Home,
   BookOpen,
-  UserCheck,
-  MessageCircle
+  UserCheck
 } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
@@ -36,7 +35,6 @@ const navigationItems = {
     { title: "Classes", url: "/classes", icon: BookOpen },
     { title: "Attendance", url: "/attendance", icon: UserCheck },
     { title: "Analytics", url: "/analytics", icon: ChartBar },
-    { title: "Messages", url: "/messages", icon: MessageCircle },
     { title: "Settings", url: "/settings", icon: Settings },
   ],
   teacher: [
@@ -44,7 +42,6 @@ const navigationItems = {
     { title: "My Classes", url: "/classes", icon: BookOpen },
     { title: "Attendance", url: "/attendance", icon: UserCheck },
     { title: "Students", url: "/students", icon: Users },
-    { title: "Messages", url: "/messages", icon: MessageCircle },
     { title: "Schedule", url: "/schedule", icon: Calendar },
   ],
   student: [
@@ -52,13 +49,11 @@ const navigationItems = {
     { title: "My Classes", url: "/classes", icon: BookOpen },
     { title: "Attendance", url: "/attendance", icon: UserCheck },
     { title: "Schedule", url: "/schedule", icon: Calendar },
-    { title: "Messages", url: "/messages", icon: MessageCircle },
   ],
   parent: [
     { title: "Dashboard", url: "/", icon: Home },
     { title: "My Children", url: "/children", icon: Users },
     { title: "Attendance", url: "/attendance", icon: UserCheck },
-    { title: "Messages", url: "/messages", icon: MessageCircle },
     { title: "Schedule", url: "/schedule", icon: Calendar },
   ],
 };
