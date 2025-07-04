@@ -1,13 +1,19 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Layout } from "@/components/layout/Layout";
+import { Dashboard } from "@/pages/Dashboard";
+import { UserRole } from "@/types";
 
 const Index = () => {
+  // Mock current user - in real app this would come from auth context
+  const [currentUser] = useState({
+    role: 'admin' as UserRole,
+    name: 'Sarah Johnson'
+  });
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout userRole={currentUser.role} userName={currentUser.name}>
+      <Dashboard userRole={currentUser.role} />
+    </Layout>
   );
 };
 
